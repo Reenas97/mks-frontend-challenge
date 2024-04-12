@@ -32,7 +32,7 @@ const Card: React.FC<ProductCardProps> = ({product}) => {
                 </div>
                 <div className={styles.card__title_price}>
                     <h2>{product.name}</h2>
-                    <p>{`R$ ${parseFloat(product.price)}`}</p>
+                    <p>{`R$ ${parseFloat(product.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}</p>
                 </div>
                 <p className={styles.card__description}>{product.description}</p>
             </div>

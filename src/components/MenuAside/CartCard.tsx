@@ -58,9 +58,9 @@ const CartCard: React.FC<CartCardProps> = ({product}) => {
                         </button>
                     </div>
                 </div>
-                <p className={styles.menuCard__mobileTotal}>{`R$ ${+product.price * quantity}`}</p>
+                <p className={styles.menuCard__mobileTotal}>{(parseFloat(product.price) * quantity).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
             </div>
-            <p className={styles.menuCard__hideMobile}>{`R$ ${+product.price * quantity}`}</p>
+            <p className={styles.menuCard__hideMobile}>{(parseFloat(product.price) * quantity).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
             <button 
                 className={`${styles.menuAside__close} ${styles.menuAside__close_smaller}`}
                 onClick={() => removeProductFromCart(product)}

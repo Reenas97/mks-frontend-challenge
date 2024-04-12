@@ -15,6 +15,7 @@ const Menu: React.FC<MenuProps> = ({visible, toggleMenu}) => {
     const {cart} = useCartContext()
 
     const cartTotal =  cart.reduce((total, product) => total + (+product.price * product.quantity), 0)
+    const formattedTotal = cartTotal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
 
     return(
         <AnimatePresence>
@@ -50,7 +51,7 @@ const Menu: React.FC<MenuProps> = ({visible, toggleMenu}) => {
                         </div>
                         <div className={styles.menuAside__total}>
                             <p>Total</p>
-                            <p>{`R$ ${cartTotal}`}</p>
+                            <p>{formattedTotal}</p>
                         </div>
                     </div>
                     <button className={styles.menuAside__button}>
