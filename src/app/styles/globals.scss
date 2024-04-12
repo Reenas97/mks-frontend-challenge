@@ -1,0 +1,118 @@
+@import "./variables.scss";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: $bg--grey-lighter;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container--sm{
+    padding: 0 5%;
+}
+
+.container{
+    padding: 0 10%;
+}
+
+.margint-default{
+    margin-top: 100px;
+}
+
+.marginb-default{
+    margin-bottom: 100px;
+}
+
+.react-loading-skeleton{
+    margin: 20px 0;
+}
+
+header{
+    background: $bg--blue;
+    padding: 20px 0;
+    .header__content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .navbrand {
+            font-size: 20px;
+            font-weight: 300;
+            color: #fff;
+            text-decoration: none;
+            span{
+                font-size: 40px;
+                font-weight: 600;
+                margin-right: 8px;
+            }
+        }
+        .header__cart{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            background: #fff;
+            border-radius: $border-radius;
+            border: none;
+            padding: 5px 10px;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: left;
+            color: #000;
+            cursor: pointer;
+            &:hover{
+                transition: all ease 0.5s;
+                background: $bg--dark;
+                color: #fff;
+                img{
+                    transition: all ease 0.5s;
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+}
+
+footer{
+    background: $bg--grey;
+    text-align: center;
+    padding: 10px 0;
+    p{
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+
+@media(max-width: 768px){
+    body{
+        background: #fff;
+    }
+    .marginb-default {
+        margin-bottom: 30px;
+    }
+
+    .margint-default {
+        margin-top: 30px;
+    }
+
+    header{
+        padding: 10px;
+        .header__content{
+            .navbrand{
+                font-size: 16px;
+                span{
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+}

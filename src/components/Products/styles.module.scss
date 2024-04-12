@@ -1,0 +1,101 @@
+@import "../../app/styles/variables.scss";
+
+.products__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px 20px;
+}
+
+.card{
+    box-shadow: 0px 2px 8px 0px #00000022;
+    background: #fff;
+    border-radius: $border-radius;
+    position: relative;
+    .card__infos{
+        padding: 20px 20px 56px 20px;
+        .card__img{
+            img{
+                display: block;
+                margin: auto;
+                height: 132px;
+                width: auto;
+            }
+        }
+        .card__title_price{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+            gap: 15px;
+            h2{
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 19px;
+                text-align: left;
+                color: $txt--dark;
+                width: 60%;
+            }
+            p{
+                border-radius: 5px;
+                background: $bg--dark;
+                font-size: 15px;
+                font-weight: 700;
+                color: #fff;
+                padding: 5px 10px;
+            }
+        }
+        .card__description{
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 12px;
+            color: $txt--dark;
+            margin-top: 20px;
+        }
+    }
+    .card__btn{
+        background: $bg--blue;
+        width: 100%;
+        border: none;
+        position: absolute;
+        bottom: 0;
+        border-radius: 0 0 $border-radius $border-radius;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: left;
+        color: #fff;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover{
+            transition: all ease 0.5s;
+            background: $bg--dark;
+        }
+    }
+}
+
+@media(max-width: 992px){
+    .products__container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 768px){
+    .products__container{
+        grid-template-columns: 1fr;
+    }
+
+    .card{
+        .card__infos{
+            .card__title_price{
+                gap: 10px;
+                h2{
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
